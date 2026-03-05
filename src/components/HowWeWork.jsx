@@ -1,84 +1,103 @@
 import { steps } from "../lib/data";
 import SafeImage from "./SafeImage";
 
+function StepIcon({ type }) {
+    const icons = {
+        chat: (
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        ),
+        search: (
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        ),
+        eye: (
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+        ),
+        doc: (
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+        ),
+        check: (
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        ),
+    };
+    return icons[type] || icons.chat;
+}
+
 export default function HowWeWork() {
     return (
-        <section id="how-we-work" className="py-24 bg-white relative overflow-hidden">
+        <section id="how-we-work" className="py-24 sm:py-32 bg-[#F5F5F7]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="text-center max-w-3xl mx-auto mb-20 opacity-0 animate-[fade-in-up_0.8s_ease-out_forwards]">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#111827] mb-6">
-                        Notre Méthodologie
-                    </h2>
-                    <p className="text-lg text-gray-600">
-                        Un processus transparent et structuré pour transformer votre vision immobilière en réalité.
-                    </p>
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    {/* Left: Interactive Image Card */}
+                    <div className="relative anim-slide-up">
+                        <div className="apple-card overflow-hidden h-[500px] sm:h-[600px] lg:h-[700px]">
+                            <SafeImage
+                                src="/how-we-work.jpg"
+                                alt="Notre expertise"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                    {/* Left Column: Image */}
-                    <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-xl lg:order-1 order-2 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.2s_forwards]">
-                        <SafeImage
-                            src="/how-we-work.jpg"
-                            alt="Notre équipe en action"
-                            fill
-                            className="object-cover hover:scale-105 transition-transform duration-700"
-                        />
-                        {/* Overlay Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/80 to-transparent"></div>
-
-                        <div className="absolute bottom-10 left-10 right-10">
-                            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                                <p className="text-white text-lg font-medium italic">
-                                    "L'excellence n'est pas un acte, mais une habitude."
-                                </p>
-                                <div className="flex items-center gap-3 mt-4">
-                                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p className="text-white font-bold">Jean Dupont</p>
-                                        <p className="text-white/70 text-sm">Directeur d'Agence</p>
-                                    </div>
+                            <div className="absolute bottom-12 left-12 right-12 text-white">
+                                <div className="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-widest mb-4">
+                                    Engagement Total
                                 </div>
+                                <h4 className="text-3xl font-bold tracking-tight mb-4">Votre vision, notre mission.</h4>
+                                <p className="text-white/70 text-lg font-medium leading-relaxed max-w-sm">
+                                    De la première idée à la signature finale, nous sommes à vos côtés.
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Right Column: Steps */}
-                    <div className="space-y-12 lg:order-2 order-1">
-                        {steps.map((step, index) => (
-                            <div
-                                key={step.number}
-                                className="flex gap-6 group opacity-0 animate-[fade-in-up_0.8s_ease-out_forwards]"
-                                style={{ animationDelay: `${index * 150 + 200}ms` }}
-                            >
-                                <div className="flex-shrink-0 relative">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#EEF3F8] text-[#5B8DB8] flex items-center justify-center text-xl font-bold group-hover:bg-[#111827] group-hover:text-white transition-colors duration-300">
-                                        {step.number}
-                                    </div>
-                                    {/* Connecting Line */}
-                                    {index !== steps.length - 1 && (
-                                        <div className="absolute top-16 bottom-[-3rem] left-1/2 w-0.5 bg-slate-100 -translate-x-1/2 group-hover:bg-[#5B8DB8]/30 transition-colors duration-300"></div>
-                                    )}
-                                </div>
+                    {/* Right: Detailed Steps */}
+                    <div className="space-y-12">
+                        <div className="mb-12 anim-slide-up">
+                            <h2 className="text-sm font-semibold tracking-widest text-[#86868B] uppercase mb-4">Notre Méthode</h2>
+                            <h3 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1D1D1F]">
+                                L'Art de la <br />
+                                <span className="text-[#86868B]">Transaction.</span>
+                            </h3>
+                        </div>
 
-                                <div className="pb-4">
-                                    <h3 className="text-2xl font-bold text-[#111827] mb-3 group-hover:text-[#5B8DB8] transition-colors duration-300">
-                                        {step.title}
-                                    </h3>
-                                    <p className="text-lg text-gray-600 leading-relaxed">
-                                        {step.description}
-                                    </p>
+                        <div className="space-y-10">
+                            {steps.map((step, index) => (
+                                <div
+                                    key={step.number}
+                                    className="flex gap-8 anim-slide-up"
+                                    style={{ animationDelay: `${index * 150}ms` }}
+                                >
+                                    <div className="flex-shrink-0">
+                                        <div className="w-14 h-14 rounded-2xl bg-white border border-black/[0.05] shadow-sm text-[#0071E3] flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                                            <StepIcon type={step.icon} />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-xl font-bold text-[#1D1D1F] mb-2">{step.title}</h4>
+                                        <p className="text-[#86868B] text-base leading-relaxed max-w-md">
+                                            {step.description}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
                 </div>
+
             </div>
         </section>
     );

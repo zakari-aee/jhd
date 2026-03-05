@@ -1,16 +1,16 @@
 export const navLinks = [
-  { label: "О нас", href: "#about" },
-  { label: "Каталог", href: "#catalog" },
-  { label: "Этапы работы", href: "#how-we-work" },
-  { label: "Отзывы", href: "#testimonials" },
-  { label: "Контакты", href: "#contact" },
+  { label: "À propos", href: "#about" },
+  { label: "Catalogue", href: "#catalog" },
+  { label: "Notre méthode", href: "#how-we-work" },
+  { label: "Témoignages", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const stats = [
-  { value: "10+", label: "лет на рынке" },
-  { value: "1000+", label: "успешных сделок" },
-  { value: "4000+", label: "объектов в базе" },
-  { value: "95%", label: "довольных клиентов" },
+  { value: "10+", label: "ans d'expérience" },
+  { value: "1000+", label: "transactions réussies" },
+  { value: "4000+", label: "biens en portefeuille" },
+  { value: "95%", label: "clients satisfaits" },
 ];
 
 export const logos = [
@@ -24,20 +24,20 @@ export const logos = [
 export const catalogItems = [
   {
     id: 1,
-    title: "Офисные помещения",
-    count: "4000+ объектов",
+    title: "Bureaux professionnels",
+    count: "4000+ biens",
     image: "/catalog-1.jpg",
   },
   {
     id: 2,
-    title: "Складские помещения",
-    count: "1000+ объектов",
+    title: "Entrepôts & logistique",
+    count: "1000+ biens",
     image: "/catalog-2.jpg",
   },
   {
     id: 3,
-    title: "Земельные участки",
-    count: "2000+ объектов",
+    title: "Terrains constructibles",
+    count: "2000+ biens",
     image: "/catalog-3.jpg",
   },
 ];
@@ -45,32 +45,32 @@ export const catalogItems = [
 export const steps = [
   {
     number: "01",
-    title: "Консультация и анализ потребностей",
-    description: "На этом этапе мы определяем, какой тип недвижимости вам нужен.",
+    title: "Consultation & analyse des besoins",
+    description: "Nous identifions précisément le type de bien immobilier dont vous avez besoin.",
     icon: "chat",
   },
   {
     number: "02",
-    title: "Поиск и подбор объектов",
-    description: "Предлагаем только проверенные объекты, соответствующие вашему бюджету и целям.",
+    title: "Recherche & sélection de biens",
+    description: "Nous vous proposons uniquement des biens vérifiés, correspondant à votre budget et vos objectifs.",
     icon: "search",
   },
   {
     number: "03",
-    title: "Просмотр и оценка недвижимости",
-    description: "Организуем просмотр объектов, предоставим полную информацию о недвижимости.",
+    title: "Visite & évaluation du bien",
+    description: "Nous organisons les visites et vous fournissons toutes les informations sur le bien.",
     icon: "eye",
   },
   {
     number: "04",
-    title: "Проверка и подготовка документов",
-    description: "Проводим всестороннюю проверку всех документов и прав собственности.",
+    title: "Vérification & préparation des documents",
+    description: "Nous effectuons une vérification complète de tous les documents et titres de propriété.",
     icon: "doc",
   },
   {
     number: "05",
-    title: "Сопровождение сделки",
-    description: "Оказываем поддержку в заключении договора и сопровождаем на всех этапах.",
+    title: "Accompagnement de la transaction",
+    description: "Nous vous accompagnons dans la conclusion du contrat et à chaque étape du processus.",
     icon: "check",
   },
 ];
@@ -78,10 +78,10 @@ export const steps = [
 export const testimonials = [
   {
     id: 1,
-    name: "Екатерина Иванова",
-    role: "Генеральный директор, ООО «Альфа»",
-    quote: "Команда помогла нам найти идеальный офис в центре города за рекордно короткие сроки. Профессиональный подход и внимание к деталям — то, что отличает эту компанию от конкурентов.",
+    name: "Sophie Martin",
+    role: "Directrice Générale, Alpha Conseil",
+    quote: "L'équipe nous a aidés à trouver le bureau idéal en centre-ville dans des délais records. Le professionnalisme et l'attention aux détails distinguent cette agence de ses concurrents.",
     rating: 5,
-    avatar: "Е",
+    avatar: "S",
   },
 ];

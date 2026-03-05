@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #EEF3F8;
+  --color-brand-bg: #F5F5F7;
   --color-brand-card: #FFFFFF;
-  --color-brand-accent: #5B8DB8;
-  --color-brand-text: #111827;
-  --color-brand-secondary: #6B7280;
-  --font-sans: "Manrope", system-ui, sans-serif;
+  --color-brand-accent: #0071E3;
+  --color-brand-text: #1D1D1F;
+  --color-brand-secondary: #86868B;
+  --font-sans: "Inter", "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --animate-fade-in-up: fade-in-up 0.7s ease-out forwards;
+  --animate-blur-in: blur-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up-fade: slide-up-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-up-fade: scale-up-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-apple-expand: apple-expand 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @layer base {
@@ -16,16 +19,143 @@
     background-color: var(--color-brand-bg);
     color: var(--color-brand-text);
     font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(0, 113, 227, 0.3);
+    color: inherit;
   }
 }
 
-@keyframes fade-in-up {
+/* ===== APPLE-STYLE KEYFRAME ANIMATIONS ===== */
+
+@keyframes blur-in {
   0% {
     opacity: 0;
-    transform: translateY(24px);
+    filter: blur(12px);
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
+}
+
+@keyframes scale-up-fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes apple-expand {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+/* ===== UTILITY ANIMATION CLASSES ===== */
+
+.anim-blur-in {
+  opacity: 0;
+  animation: blur-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-slide-up {
+  opacity: 0;
+  animation: slide-up-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-scale-up {
+  opacity: 0;
+  animation: scale-up-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-expand {
+  opacity: 0;
+  animation: apple-expand 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-d1 { animation-delay: 100ms; }
+.anim-d2 { animation-delay: 200ms; }
+.anim-d3 { animation-delay: 300ms; }
+.anim-d4 { animation-delay: 400ms; }
+.anim-d5 { animation-delay: 500ms; }
+
+/* Apple-style clean borders and shadows */
+.apple-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.apple-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.apple-btn-primary {
+  background-color: #0071E3;
+  color: white;
+  border-radius: 980px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-btn-primary:hover {
+  background-color: #0077ED;
+  transform: scale(1.02);
+}
+
+.apple-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  color: #1D1D1F;
+  border-radius: 980px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-btn-secondary:hover {
+  background-color: #FFFFFF;
+  transform: scale(1.02);
+  border-color: rgba(0, 0, 0, 0.2);
 }
