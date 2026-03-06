@@ -27,8 +27,9 @@ export default function Catalog() {
                                     src={item.image}
                                     alt={item.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                                />
+                                    />
                                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </div>
 
