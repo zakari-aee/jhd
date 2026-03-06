@@ -26,19 +26,19 @@ export const catalogItems = [
     id: 1,
     title: "Bureaux professionnels",
     count: "4000+ biens",
-    image: "/catalog-1.jpg",
+    image: "/catalog-1.webp",
   },
   {
     id: 2,
     title: "Entrepôts & logistique",
     count: "1000+ biens",
-    image: "/catalog-2.jpg",
+    image: "/catalog-2.webp",
   },
   {
     id: 3,
     title: "Terrains constructibles",
     count: "2000+ biens",
-    image: "/catalog-3.jpg",
+    image: "/catalog-3.webp",
   },
 ];
 

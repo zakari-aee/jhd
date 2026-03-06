@@ -20,12 +20,12 @@ export default function Hero() {
 
       {/* Background Image */}
       <div
-        className={`absolute inset-0 z-0 transition-transform duration-[4000ms] ease-out ${
+        className={`absolute inset-0 z-0 transition-transform duration-4000 ease-out ${
           isLoaded ? "scale-110" : "scale-100"
         }`}
       >
         <SafeImage
-          src="/hero.png"
+          src="/hero.webp"
           alt="Bâtiment commercial de luxe"
           fill
           priority
@@ -38,9 +38,9 @@ export default function Hero() {
       </div>
 
       {/* Glow Effects */}
-      <div className="pointer-events-none absolute left-1/4 top-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-brand-accent/15 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/4 top-1/4 h-125 w-125 animate-pulse rounded-full bg-brand-accent/15 blur-[120px]" />
       <div
-        className="pointer-events-none absolute bottom-1/4 right-1/4 h-[400px] w-[400px] animate-pulse rounded-full bg-brand-accent/10 blur-[100px]"
+        className="pointer-events-none absolute bottom-1/4 right-1/4 h-100 w-100 animate-pulse rounded-full bg-brand-accent/10 blur-[100px]"
         style={{ animationDuration: "4s" }}
       />
 

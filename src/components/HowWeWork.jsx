@@ -42,12 +42,12 @@ export default function HowWeWork() {
 
                     {/* Left: Interactive Image Card */}
                     <div className="relative anim-slide-up">
-                        <div className="apple-card overflow-hidden h-125 sm:h-150 lg:h-175">
+                        <div className="fixed apple-card overflow-hidden h-125 sm:h-150 lg:h-175">
                             <SafeImage
-                                src="/how-we-work.jpg"
+                                src="/how-we-work.webp"
                                 alt="Comment nous travaillons"
                                 fill
-                                sizes="100vw"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                                 priority
                                 className="object-cover"
                             />
