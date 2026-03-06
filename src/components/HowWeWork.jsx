@@ -45,9 +45,11 @@ export default function HowWeWork() {
                         <div className="apple-card overflow-hidden h-125 sm:h-150 lg:h-175">
                             <SafeImage
                                 src="/how-we-work.jpg"
-                                alt="Notre expertise"
+                                alt="Comment nous travaillons"
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                                sizes="100vw"
+                                priority
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
