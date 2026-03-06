@@ -35,21 +35,21 @@ function StepIcon({ type }) {
 
 export default function HowWeWork() {
     return (
-        <section id="how-we-work" className="py-24 sm:py-32 bg-[#F5F5F7]">
+        <section id="how-we-work" className="py-24 sm:py-32 bg-brand-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
 
                     {/* Left: Interactive Image Card */}
                     <div className="relative anim-slide-up">
-                        <div className="apple-card overflow-hidden h-[500px] sm:h-[600px] lg:h-[700px]">
+                        <div className="apple-card overflow-hidden h-125 sm:h-150 lg:h-175">
                             <SafeImage
                                 src="/how-we-work.jpg"
                                 alt="Notre expertise"
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
                             <div className="absolute bottom-12 left-12 right-12 text-white">
                                 <div className="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-widest mb-4">
@@ -66,10 +66,10 @@ export default function HowWeWork() {
                     {/* Right: Detailed Steps */}
                     <div className="space-y-12">
                         <div className="mb-12 anim-slide-up">
-                            <h2 className="text-sm font-semibold tracking-widest text-[#86868B] uppercase mb-4">Notre Méthode</h2>
-                            <h3 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1D1D1F]">
+                            <h2 className="text-sm font-semibold tracking-widest text-brand-secondary uppercase mb-4">Notre Méthode</h2>
+                            <h3 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand-text">
                                 L'Art de la <br />
-                                <span className="text-[#86868B]">Transaction.</span>
+                                <span className="text-brand-secondary">Transaction.</span>
                             </h3>
                         </div>
 
@@ -80,14 +80,14 @@ export default function HowWeWork() {
                                     className="flex gap-8 anim-slide-up"
                                     style={{ animationDelay: `${index * 150}ms` }}
                                 >
-                                    <div className="flex-shrink-0">
-                                        <div className="w-14 h-14 rounded-2xl bg-white border border-black/[0.05] shadow-sm text-[#0071E3] flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
+                                    <div className="shrink-0">
+                                        <div className="w-14 h-14 rounded-2xl bg-white border border-black/5 shadow-sm text-brand-accent flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-105">
                                             <StepIcon type={step.icon} />
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold text-[#1D1D1F] mb-2">{step.title}</h4>
-                                        <p className="text-[#86868B] text-base leading-relaxed max-w-md">
+                                        <h4 className="text-xl font-bold text-brand-text mb-2">{step.title}</h4>
+                                        <p className="text-brand-secondary text-base leading-relaxed max-w-md">
                                             {step.description}
                                         </p>
                                     </div>
