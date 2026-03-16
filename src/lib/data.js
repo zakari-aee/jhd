@@ -6,6 +6,7 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+
 export const stats = [
   { value: "10+", label: "ans d'expérience" },
   { value: "1000+", label: "transactions réussies" },
